@@ -39,9 +39,9 @@ function App() {
   ]
   // const [employees, setEmployees] = useState([]);
 
-  this.employees = this.state.list.map((employee, key) => 
-  <li key={employee.id}>{employee.name}</li> 
-  );
+  // this.employees = this.state.list.map((employee, key) => 
+  // <li key={employee.id}>{employee.name}</li> 
+  // );
 
   return (
     <div className="App">
