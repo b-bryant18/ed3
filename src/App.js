@@ -2,10 +2,12 @@ import React from 'react';
 import logo from './logo.svg';
 import './App.css';
 import Nav from "./components/nav";
+import Employee from "./components/employee";
 
 function App() {
-  const employeeList =[
-    { id: 1,
+  const employeeList = [
+    {
+      id: 1,
       name: "Elon M",
       department: "Programming"
     },
@@ -21,7 +23,7 @@ function App() {
       department: "Programming"
     },
     {
-      id: 4 ,
+      id: 4,
       name: "Jordan B",
       department: "Marketing"
     },
@@ -43,25 +45,19 @@ function App() {
   // <li key={employee.id}>{employee.name}</li> 
   // );
 
+  // const allEmployees = employeeList.map((employee) =>
+  // <li>{employee}</li>
+  // )
+
+  //Puts employee list onto the webpage
   return (
-    <div className="App">
-      <header className="App-header">
-        <Nav />
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+    <Nav />
+      {/* {employeeList.map(employee => <li> {employee.id},  {employee.name} </li>)} */}
+
+      {employeeList.map(employee => <Employee  id = {employee.id} name = {employee.name} department = {employee.department}/> )}
     </div>
-  );
+  )
 }
 
 export default App;

@@ -1,15 +1,13 @@
 import React, {Component} from "react";
 
-class Employee extends Component {
-    render() {
+function Employee(props) {
         return (
             <div>
-                <p>{this.props.employee.id}</p>
-                <p>{this.props.employee.name}</p>
-                <p>{this.props.employee.department}</p>
+                <p>{props.id}</p>
+                <p>{props.name}</p>
+                <p>{props.department}</p>
             </div>
         )
-    }
 }
 
 export default Employee;

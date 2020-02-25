@@ -9,7 +9,9 @@ function SearchBox() {
                 type = "search"
                 placeholder = "Search employee"
                 aria-label = "search"
+                //onChange, handleSearch,Change
                 />
+
 
             </form>
 
