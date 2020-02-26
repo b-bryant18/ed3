@@ -10,4 +10,8 @@ function Employee(props) {
         )
 }
 
+//make tablerows inside of return statement
+//Need html for a table
+//Each row is its own component
+
 export default Employee;

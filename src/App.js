@@ -1,8 +1,7 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
-import Nav from "./components/nav";
-import Employee from "./components/employee";
+import DataArea from "./components/dataArea";
 
 function App() {
   const employeeList = [
@@ -39,25 +38,23 @@ function App() {
       department: "Marketing"
     }
   ]
+
+  console.log(employeeList.sort())
+
   // const [employees, setEmployees] = useState([]);
 
   // this.employees = this.state.list.map((employee, key) => 
   // <li key={employee.id}>{employee.name}</li> 
   // );
 
-  // const allEmployees = employeeList.map((employee) =>
-  // <li>{employee}</li>
-  // )
-
   //Puts employee list onto the webpage
   return (
     <div>
-    <Nav />
-      {/* {employeeList.map(employee => <li> {employee.id},  {employee.name} </li>)} */}
-
-      {employeeList.map(employee => <Employee  id = {employee.id} name = {employee.name} department = {employee.department}/> )}
+    <DataArea />
     </div>
   )
 }
 
 export default App;
+
+//MAKE A NEW REPO
