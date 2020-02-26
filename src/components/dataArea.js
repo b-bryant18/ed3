@@ -18,7 +18,7 @@ const employeeList = [
   },
   {
     id: 3,
-    name: "Eric S",
+    name: "Eric G",
     department: "Programming"
   },
   {
@@ -48,6 +48,15 @@ function compare(a, b) {
   }
   return 0;
 }
+function compare2(a, b) {
+  if (a.department < b.department) {
+    return -1;
+  }
+  if (a.department > b.department) {
+    return 1;
+  }
+  return 0;
+}
 console.log(employeeList.sort(compare))
 
 // class DataArea extends React.Component {
@@ -66,36 +75,20 @@ console.log(employeeList.sort(compare))
 class DataArea extends Component {
   constructor(props) {
     super(props);
-    this.state = { size: 3 }
-  }
-  //   render() {
-  //     let rows = [];
-  //     for (var i = 0; i < this.state.size; i++) {
-  //       let rowID = `row$[i]`
-  //       let cell = []
-  //       for (var idx = 0; idx < this.state.size; idx++) {
-  //         let cellID = `cell${i}-${idx}`
-  //         cell.push(<td key={cellID} id={cellID}></td>)
-  //       }
-  //       rows.push(<tr key={i} id={rowID}>{cell}</tr>)
-  //     }
-  //     return (
-  //       <div className="container">
-  //         <div className="col s12 board">
-  //           <table id="simple-board">
-  //             <tbody>
+    this.state = { size: 3, employeeList }
 
-  //             </tbody>
-  //           </table>
-  //         </div>
-  //       </div>
-  //     )
-  //   }
-  // }
+  }
+
+  sortByDepartment = () => {
+    const newEmployeeList = [...this.state.employeeList];
+    const res = newEmployeeList.sort(compare2);
+    this.setState({employeeList: res})
+  }
 
   render() {
     return (
       <div>
+        <button onClick={() => this.sortByDepartment()}>Switch</button>
       <Nav />
         <table>
             <tr>
@@ -103,7 +96,7 @@ class DataArea extends Component {
               <th>Name:</th>
               <th>Department:</th>
             </tr>
-          {employeeList.map(row => <tr> <td>{row.id}</td> <td>{row.name}</td> <td>{row.department}</td> </tr>) }
+          {this.state.employeeList.map(row => <tr> <td>{row.id}</td> <td>{row.name}</td> <td>{row.department}</td> </tr>) }
         </table>
       </div>
   )
