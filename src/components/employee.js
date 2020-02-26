@@ -3,9 +3,15 @@ import React, {Component} from "react";
 function Employee(props) {
         return (
             <div>
+                <tr>
                 <p>{props.id}</p>
+                </tr>
+                <tr>
                 <p>{props.name}</p>
+                </tr>
+                <tr>
                 <p>{props.department}</p>
+                </tr>
             </div>
         )
 }
