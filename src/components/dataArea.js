@@ -68,57 +68,46 @@ class DataArea extends Component {
     super(props);
     this.state = { size: 3 }
   }
-//   render() {
-//     let rows = [];
-//     for (var i = 0; i < this.state.size; i++) {
-//       let rowID = `row$[i]`
-//       let cell = []
-//       for (var idx = 0; idx < this.state.size; idx++) {
-//         let cellID = `cell${i}-${idx}`
-//         cell.push(<td key={cellID} id={cellID}></td>)
-//       }
-//       rows.push(<tr key={i} id={rowID}>{cell}</tr>)
-//     }
-//     return (
-//       <div className="container">
-//         <div className="col s12 board">
-//           <table id="simple-board">
-//             <tbody>
+  //   render() {
+  //     let rows = [];
+  //     for (var i = 0; i < this.state.size; i++) {
+  //       let rowID = `row$[i]`
+  //       let cell = []
+  //       for (var idx = 0; idx < this.state.size; idx++) {
+  //         let cellID = `cell${i}-${idx}`
+  //         cell.push(<td key={cellID} id={cellID}></td>)
+  //       }
+  //       rows.push(<tr key={i} id={rowID}>{cell}</tr>)
+  //     }
+  //     return (
+  //       <div className="container">
+  //         <div className="col s12 board">
+  //           <table id="simple-board">
+  //             <tbody>
 
-//             </tbody>
-//           </table>
-//         </div>
-//       </div>
-//     )
-//   }
-// }
+  //             </tbody>
+  //           </table>
+  //         </div>
+  //       </div>
+  //     )
+  //   }
+  // }
 
-render() {
-  return (
-    <table>
-      <thead>
-        <tr>
-          <th>ID:</th>
-          <th>Name:</th>
-          <th>Department:</th>
-          <Nav />
-          
-        </tr>
-      </thead>
-      <tbody>
-        {
-          this.employeeList.map(row =>(
+  render() {
+    return (
+      <div>
+      <Nav />
+        <table>
             <tr>
-            <td>{Employee.id}</td>
-            <td>{Employee.name}</td>
-            <td>{Employee.department}</td>
+              <th>ID:</th>
+              <th>Name:</th>
+              <th>Department:</th>
             </tr>
-          ))
-        }
-      </tbody>
-    </table>
+          {employeeList.map(row => <tr> <td>{row.id}</td> <td>{row.name}</td> <td>{row.department}</td> </tr>) }
+        </table>
+      </div>
   )
-}
+  }
 }
 export default DataArea;
 

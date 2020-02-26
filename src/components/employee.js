@@ -2,7 +2,7 @@ import React, {Component} from "react";
 
 function Employee(props) {
         return (
-            <div>
+            <tbody>
                 <tr>
                 <p>{props.id}</p>
                 </tr>
@@ -12,7 +12,7 @@ function Employee(props) {
                 <tr>
                 <p>{props.department}</p>
                 </tr>
-            </div>
+            </tbody>
         )
 }
 
