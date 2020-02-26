@@ -4,7 +4,29 @@ import './App.css';
 import DataArea from "./components/dataArea";
 
 function App() {
-  const employeeList = [
+  const employeeList = {
+    columns: [
+      {
+      label: 'Name',
+      field: 'name',
+      sort: 'asc',
+      width: 150
+      },
+      {
+      label: 'Department',
+      field: 'department',
+      sort: 'asc',
+      width: 150
+      },
+      {
+      label: 'ID',
+      field: 'id',
+      sort: 'asc',
+      width: 150
+      }
+
+    ],
+    rows: [
     {
       id: 1,
       name: "Elon M",
@@ -38,8 +60,7 @@ function App() {
       department: "Marketing"
     }
   ]
-
-  console.log(employeeList.sort())
+}
 
   // const [employees, setEmployees] = useState([]);
 
