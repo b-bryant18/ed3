@@ -61,7 +61,7 @@ console.log(employeeList.sort(compare))
 
 ////////////////////////////
 function filterIds(c) {
-  return c.id >= 2;
+  return c.id >= 4;
 }
 
 class DataArea extends Component {
@@ -86,8 +86,8 @@ class DataArea extends Component {
   render() {
     return (
       <div>
-        <button onClick={() => this.sortByDepartment()}>Switch</button>
-        <button onClick={() => this.filterById()}> Check ID </button>
+        <button onClick={() => this.sortByDepartment()}>Sort by Dept</button>
+        <button onClick={() => this.filterById()}> Filter IDs > 4 </button>
         <Nav />
         <table>
           <tr>
