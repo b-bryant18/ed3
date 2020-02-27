@@ -59,18 +59,10 @@ function compare2(a, b) {
 }
 console.log(employeeList.sort(compare))
 
-// class DataArea extends React.Component {
-//   state = {
-//     employees: [{}]
-//   };
-
-// filterEmployees = () => {
-//   this.setState({employees: this.state.employees.filter });
-// }
-
-// state should be how the employees are sorted: either alphabetically or by ID number.
-// could make ID numbers 6 digits long.
-//For every employee that gets mapped, create a table row
+////////////////////////////
+function filterIds(c) {
+  return c.id >= 2;
+}
 
 class DataArea extends Component {
   constructor(props) {
@@ -82,31 +74,31 @@ class DataArea extends Component {
   sortByDepartment = () => {
     const newEmployeeList = [...this.state.employeeList];
     const res = newEmployeeList.sort(compare2);
-    this.setState({employeeList: res})
+    this.setState({ employeeList: res })
   }
 
   filterById = () => {
     const newIdList = [...this.state.employeeList];
     const newRes = newIdList.filter(filterIds);
-    this.setState({employeeList: newRes})
+    this.setState({ employeeList: newRes })
   }
 
   render() {
     return (
       <div>
         <button onClick={() => this.sortByDepartment()}>Switch</button>
-        <button onClick={() =>this.checkIdNumbers()}> Check ID </button>
-      <Nav />
+        <button onClick={() => this.filterById()}> Check ID </button>
+        <Nav />
         <table>
-            <tr>
-              <th>ID:</th>
-              <th>Name:</th>
-              <th>Department:</th>
-            </tr>
+          <tr>
+            <th>ID:</th>
+            <th>Name:</th>
+            <th>Department:</th>
+          </tr>
           {this.state.employeeList.map(row => <tr> <td>{row.id}</td> <td>{row.name}</td> <td>{row.department}</td> </tr>)}
         </table>
       </div>
-  )
+    )
   }
 }
 export default DataArea;
