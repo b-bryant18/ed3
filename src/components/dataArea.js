@@ -1,7 +1,5 @@
 import React, { Component } from "react";
-// import Table from "./table";
 import Nav from "./nav";
-import Employee from "./employee";
 import "./dataArea.css";
 
 const employeeList = [
@@ -92,6 +90,7 @@ class DataArea extends Component {
       <div>
         <button onClick={() => this.sortByDepartment()}>Sort by Dept</button>
         <button onClick={() => this.filterById()}> Filter IDs > 4 </button>
+
         <Nav />
         <table>
           <tr>
