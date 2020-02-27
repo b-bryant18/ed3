@@ -85,10 +85,17 @@ class DataArea extends Component {
     this.setState({employeeList: res})
   }
 
+  filterById = () => {
+    const newIdList = [...this.state.employeeList];
+    const newRes = newIdList.filter(filterIds);
+    this.setState({employeeList: newRes})
+  }
+
   render() {
     return (
       <div>
         <button onClick={() => this.sortByDepartment()}>Switch</button>
+        <button onClick={() =>this.checkIdNumbers()}> Check ID </button>
       <Nav />
         <table>
             <tr>
@@ -96,7 +103,7 @@ class DataArea extends Component {
               <th>Name:</th>
               <th>Department:</th>
             </tr>
-          {this.state.employeeList.map(row => <tr> <td>{row.id}</td> <td>{row.name}</td> <td>{row.department}</td> </tr>) }
+          {this.state.employeeList.map(row => <tr> <td>{row.id}</td> <td>{row.name}</td> <td>{row.department}</td> </tr>)}
         </table>
       </div>
   )
