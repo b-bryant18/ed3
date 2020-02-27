@@ -39,6 +39,7 @@ const employeeList = [
   }
 ]
 
+//Sorts employee names alphabetically
 function compare(a, b) {
   if (a.name < b.name) {
     return -1;
@@ -48,6 +49,8 @@ function compare(a, b) {
   }
   return 0;
 }
+
+//Sorts employees by their department
 function compare2(a, b) {
   if (a.department < b.department) {
     return -1;
@@ -59,7 +62,7 @@ function compare2(a, b) {
 }
 console.log(employeeList.sort(compare))
 
-////////////////////////////
+//Filters employeeList array and removes employees whose ID numbers are > 4
 function filterIds(c) {
   return c.id >= 4;
 }
@@ -68,15 +71,16 @@ class DataArea extends Component {
   constructor(props) {
     super(props);
     this.state = { size: 3, employeeList }
-
   }
 
+  //Changes state to sort by dept when button is clicked (below)
   sortByDepartment = () => {
     const newEmployeeList = [...this.state.employeeList];
     const res = newEmployeeList.sort(compare2);
     this.setState({ employeeList: res })
   }
 
+  //Changes state to filter by ID numbers when button is clicked (below)
   filterById = () => {
     const newIdList = [...this.state.employeeList];
     const newRes = newIdList.filter(filterIds);
